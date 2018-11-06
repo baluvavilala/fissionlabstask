@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "chart": "^0.1.2",
+    "chart.js": "^2.7.3",
     "papaparse": "^4.6.1",
     "react": "^16.6.0",
     "react-chartjs-2": "^2.7.4",

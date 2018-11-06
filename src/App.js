@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import CSVReader from "react-csv-reader";
 import './App.css';
 import ShowData from "./components/ShowData"
-import Chart from './components/linechart';
 
 class App extends Component {
+  /** 
+   Initialize the chart data with default values to set chart data
+  */
   constructor(props) {
     super(props)
     this.state = {
@@ -17,9 +19,20 @@ class App extends Component {
       },
     }
   }
+  /** 
+   Below function will responsible to parse the data from CSV 
+   which we have we have uploaded from the local computer and
+   It is in the form of array of arrays
+  */
   handleFileUpload = data => {
     this.getChartData(data)
   }
+  /** 
+   Below function will handling the logic to iterate over data
+   which is getting from CSV and will split this data in the form 
+   X- axis as Years
+   Y- axis as Score
+  */
   getChartData(data){
     let years = []
     let score = []
@@ -38,7 +51,8 @@ class App extends Component {
         }
       }
     }
-    var scorearr = score.filter( element => !element.includes("SER"))  
+    /** Logic to remove "SERIES1, SERIES2, SERIES3 and SERIES4" */
+    let scorearr = score.filter( element => !element.includes("SER"))  
     this.setState({
       chartData : {
         labels : years,
@@ -60,13 +74,13 @@ class App extends Component {
         <div className="container">
           <CSVReader
             cssClass="react-csv-input"
-            label="Upload CSV from your computer"
+            label="Fission Labs"
             onFileLoaded={this.handleFileUpload}
           />  
           <ShowData data = {this.state.chartData}
             location = "fisson labs"
             displayTitle = "Hello"
-            title = "Line Chart Data"
+            title = "CSV Data in the form of Line Chart"
             displayLegend = "Legend"
             legendPosition = "Position"
           />

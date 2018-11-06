@@ -1,30 +1,26 @@
-body {
-    font-family: "Helvetica Neue", sans-serif;
+.container {
+  text-align: center;
+  padding: 15px;
+  margin: 10px auto;
+  p{
+    padding-top: 10px;
+    color: #666;
   }
-  #enter-data-field {
-    width: calc(100% - 8px);
-    height: 300px;
-    font-family: "Consolas", monospace;
+  .react-csv-input {
+    label {
+      color: #f1592a;
+      font-weight: bolder;
+      font-size: 32px;
+    }
+    h2 {
+      color : #666;
+    }
+    .csv-input {
+      padding: 10px;
+      display: block;
+      margin: 15px auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    } 
   }
-  #update-data-from-file {
-    display: none;
-  }    
-  .file-upload {
-    height: 40px;
-    margin-bottom: 10px;
-  }
-  .file-upload-button, .file-upload-name {
-    display: inline-block;
-  }
-  .button {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    background: #45b29d;
-    color: #fff;
-    cursor: pointer;
-    padding: 10px;
-    display: inline-block;
-  }
-  .button:hover {
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  }
+}

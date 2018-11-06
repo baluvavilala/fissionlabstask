@@ -1,7 +1,7 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
 const ShowData = (props) => {
-    console.log(props.data.labels.length)
+    // console.log(props.data.labels.length)
     if(props.data.labels.length) {
         return(
             <div className="chart">
@@ -23,7 +23,7 @@ const ShowData = (props) => {
         )
     } else {
         return(
-            <h2> Please select file...</h2>
+            <h2> Please Upload CSV file...</h2>
         )
     }
 }
